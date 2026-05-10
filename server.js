@@ -12,10 +12,7 @@ import path from "path";
 const app = express();
 app.set("trust proxy", 1);
 
-const allowOrigins = [
-  "https://shopora-gui.vercel.app",
-  "http://localhost:5173",
-];
+const allowOrigins = [process.env.FRONTEND_URL, "http://localhost:5173"];
 app.use(
   cors({
     origin: function (origin, callback) {

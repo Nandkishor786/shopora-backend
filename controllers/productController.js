@@ -18,7 +18,10 @@ export const addProduct = async (req, res) => {
     const sizes = JSON.parse(req.body.sizes || "[]");
 
     // MULTIPLE IMAGE PATHS
-    const images = req.files.images.map((file) => file.path);
+    const images = req.files.images.map(
+      (file) =>
+        `${req.protocol}://${req.get("host")}/${file.path.replace(/\\\\/g, "/")}`,
+    );
 
     if (!name || !price || !category || !subCategory || images.length === 0) {
       return res.status(400).json({
