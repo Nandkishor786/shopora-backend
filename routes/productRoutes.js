@@ -15,12 +15,12 @@ const router = express.Router();
 
 router.post(
   "/add",
-  protect,
+  protect,  
   adminOnly,
   upload.fields([
     {
       name: "images",
-      maxCount: 5,
+      maxCount: 10,
     },
   ]),
   addProduct,

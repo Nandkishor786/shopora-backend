@@ -143,7 +143,7 @@ const products = [
 
     images: ["uploads/products/knit.png", "uploads/products/knithover.png"],
 
-    stock: 10,
+    stock: 10,  
 
     sizes: ["S", "M", "L"],
 
